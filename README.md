@@ -1,20 +1,10 @@
-# Plataforma #Abandonados — borrador web
+# Plataforma #Abandonados — web inicial
 
 Sitio estático multipágina preparado para Cloudflare Pages.
 
-## Desarrollo local
+## Docs del proyecto
 
-Puede abrirse directamente `index.html`, aunque para conservar las rutas absolutas se recomienda un servidor local:
-
-```bash
-python -m http.server 8080
-```
-
-Después: `http://localhost:8080`
-
-## Publicación
-
-Subir el contenido del repositorio a GitHub y conectar ese repositorio a Cloudflare Pages. No necesita comando de compilación. Directorio de salida: `/`.
+/_docs/ (está en .gitgnore para quedar privado)
 
 ## Estructura
 
