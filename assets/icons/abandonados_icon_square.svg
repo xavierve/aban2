@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Símbolo de Plataforma Abandonados">
+  <rect width="512" height="512" rx="96" fill="#0064DE"/>
+  <!-- cartel -->
+  <g transform="rotate(-5 196 154)">
+    <rect x="112" y="68" width="168" height="168" rx="20" fill="#FFFFFF"/>
+    <!-- hashtag convertido a trazado -->
+    <path fill="#98D441" d="M211.2 137.3l-4.5 21.6h14v9.7h-16l-5.3 24.8h-10.2l5.2-24.8h-20l-5.2 24.8h-10l5.1-24.8h-10.1v-9.7h12.2l4.6-21.6h-13.5v-9.6H173l5.5-25.1h10l-5.3 25.1h20l5.5-25.1h10.2l-5.5 25.1h10.7v9.6zm-30 0l-4.7 21.6h20.1l4.6-21.6z"/>
+  </g>
+  <!-- asta -->
+  <rect x="181" y="216" width="22" height="184" rx="11" fill="#FFFFFF"/>
+  <!-- comunidad: tres cabezas -->
+  <circle cx="132" cy="318" r="42" fill="#FFFFFF"/>
+  <circle cx="230" cy="286" r="54" fill="#FFFFFF"/>
+  <circle cx="354" cy="306" r="48" fill="#FFFFFF"/>
+  <!-- torsos simplificados -->
+  <path fill="#FFFFFF" d="M55 446c3-64 35-100 77-100s75 36 78 100H55z"/>
+  <path fill="#FFFFFF" d="M139 446c4-82 42-128 91-128s88 46 92 128H139z"/>
+  <path fill="#FFFFFF" d="M286 446c4-72 34-112 68-112 48 0 83 40 87 112H286z"/>
+</svg>

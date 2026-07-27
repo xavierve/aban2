@@ -1,0 +1,10 @@
+# Ignorar la carpeta llamada "imagenes" y todo lo que tenga dentro
+_doing/
+
+# Otro ejemplo común: ignorar carpetas de configuración locales
+_docs/
+_docs/
+# Para un proyecto HTML estático básico, puedes dejar mínimo:
+node_modules/
+.DS_Store
+*.log

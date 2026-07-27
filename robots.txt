@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abandonados.pages.dev/sitemap.xml
