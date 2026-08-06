@@ -252,9 +252,23 @@ p, li, ol {max-width: 67ch;
 	gap: 1rem;
 }
 
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: .55rem;
+	text-decoration: none;
+}
+
 .brand img {
-	width: 13.125rem;
+	width: 2.6rem;
 	height: auto;
+}
+
+.brand-name {
+	font-weight: 900;
+	font-size: 1.6rem;
+	letter-spacing: -.02em;
+	color: var(--blue);
 }
 
 .sr-only {
@@ -750,6 +764,7 @@ p, li, ol {max-width: 67ch;
 
 	.hero {
 		padding: var(--space-8) 0 var(--space-7);
+		--max: 88rem;
 	}
 
 	.section {
