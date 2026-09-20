@@ -275,6 +275,20 @@ p, li, ol {max-width: 67ch;
 	color: var(--ppal);
 }
 
+/* En pantallas estrechas el nombre completo parte en dos lineas y
+   engorda la cabecera. En el municipio se nos llama "Accion Vecinal"
+   a secas; el nombre completo sigue en el aria-label del enlace,
+   en el pie y en los metadatos. */
+.brand-region {
+	display: none;
+}
+
+@media (min-width:30rem) {
+	.brand-region {
+		display: inline;
+	}
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
