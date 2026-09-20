@@ -7,4 +7,4 @@ _docs/
 # Para un proyecto HTML estático básico, puedes dejar mínimo:
 node_modules/
 .DS_Store
-*.log
+*.logCLAUDE.md
