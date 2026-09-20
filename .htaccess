@@ -22,6 +22,22 @@
 	# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
+# ---------- Tipos MIME y descargas ----------
+<IfModule mod_mime.c>
+	AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx
+	AddType application/pdf .pdf
+	AddType image/webp .webp
+	AddType image/svg+xml .svg
+</IfModule>
+
+# El .docx se descarga; el .pdf se abre en el visor del navegador,
+# que es lo que queremos para poder rellenarlo ahi mismo.
+<IfModule mod_headers.c>
+	<FilesMatch "\.docx$">
+		Header set Content-Disposition "attachment"
+	</FilesMatch>
+</IfModule>
+
 # ---------- Página de error propia ----------
 ErrorDocument 404 /404.html
 
