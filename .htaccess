@@ -1,0 +1,59 @@
+# Acción Vecinal Vélez — configuración para Hostinger (LiteSpeed/Apache)
+# Equivalente a _headers, que solo funciona en Cloudflare.
+# Si cambias el CSP aquí, cámbialo también en _headers.
+
+# ---------- HTTPS forzado ----------
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP:X-Forwarded-Proto} !https
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
+
+# ---------- Cabeceras de seguridad ----------
+<IfModule mod_headers.c>
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+	Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+	Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+	# HSTS: actívalo SOLO cuando el sitio lleve unos días bien en HTTPS.
+	# Una vez enviado, el navegador lo recuerda meses y no hay vuelta atrás fácil.
+	# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ---------- Página de error propia ----------
+ErrorDocument 404 /404.html
+
+# ---------- Caché ----------
+<IfModule mod_expires.c>
+	ExpiresActive On
+
+	# Assets con nombre fijo: una semana. Súbelo a un año cuando el sitio
+	# se despliegue con hash en los nombres de fichero.
+	ExpiresByType text/css                  "access plus 1 week"
+	ExpiresByType application/javascript    "access plus 1 week"
+	ExpiresByType image/jpeg                "access plus 1 week"
+	ExpiresByType image/png                 "access plus 1 week"
+	ExpiresByType image/webp                "access plus 1 week"
+	ExpiresByType image/svg+xml             "access plus 1 week"
+
+	# Documentos descargables: corto, porque los modelos del recurso
+	# se corrigen sobre la marcha y la gente debe bajarse el bueno.
+	ExpiresByType application/pdf           "access plus 1 hour"
+
+	# HTML: siempre revalidar.
+	ExpiresByType text/html                 "access plus 0 seconds"
+</IfModule>
+
+# ---------- Compresión ----------
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+	AddOutputFilterByType DEFLATE application/javascript application/json
+	AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------- Ficheros que no deben servirse nunca ----------
+<FilesMatch "(^\.|^_headers$|^wrangler\.jsonc$|^CLAUDE\.md$|^README\.md$)">
+	Require all denied
+</FilesMatch>
