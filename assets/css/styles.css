@@ -562,6 +562,10 @@ p, li, ol {max-width: 67ch;
 	box-shadow: var(--shadow);
 }
 
+.feature > a {
+	display: block;
+}
+
 .feature img {
 	width: 100%;
 	aspect-ratio: 16/9;
