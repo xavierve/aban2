@@ -75,7 +75,7 @@ robots.txt, sitemap.xml
 Ocurrencias de la marca: `index.html` 15, `nosotros/` 17, `actuaciones/` 4,
 `contacto/` 4, `404.html` 5, `sitemap.xml` 4, `robots.txt` 1. CSS y JS: ninguna.
 
-`assets/img/logo-abandonados.svg` es **solo el icono**, sin texto. Sirve como marca
+`assets/img/logo-accion_vecinal.svg` es **solo el icono**, sin texto. Sirve como marca
 provisional. Los wordmark con "#ABANDONADOS" son `logo-abandonados0.svg` y
 `logo-abandonados-source.svg`, y no los usa ninguna página.
 
