@@ -1,3 +1,14 @@
+// Menú principal (igual que assets/js/main.js)
+(function () {
+	var toggle = document.querySelector('.nav-toggle');
+	var menu = document.querySelector('.site-nav');
+	if (!toggle || !menu) return;
+	toggle.addEventListener('click', function () {
+		var open = menu.classList.toggle('open');
+		toggle.setAttribute('aria-expanded', String(open));
+	});
+})();
+
 (function () {
 	var btn = document.querySelector('.arriba');
 	var nav = document.querySelector('.indice');
